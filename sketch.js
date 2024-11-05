@@ -76,7 +76,7 @@ function movePlayer() {
   if (keyIsDown(DOWN_ARROW)) {
     playerY += 5
   }
-  constrain
+
   
   // TODO: Add up/down movement
   // HINT: Use UP_ARROW and DOWN_ARROW keys
@@ -90,7 +90,8 @@ function movePlayer() {
 function moveObstacle() {
   // TODO: Move obstacle from left to right
   // HINT: Increase obstacleX by obstacleSpeed
-  
+  obstacleX = obstacleX +3
+  obstacleY = obstacleY +3
   // TODO: Reset obstacle when it goes off screen
   // HINT: Check if obstacleX > width
   // Reset to left side and new random Y position
