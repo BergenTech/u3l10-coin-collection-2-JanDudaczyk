@@ -90,9 +90,12 @@ function movePlayer() {
 function moveObstacle() {
   // TODO: Move obstacle from left to right
   // HINT: Increase obstacleX by obstacleSpeed
-  obstacleX = obstacleX +3
-  obstacleY = obstacleY +3
+  obstacleY = obstacleY + 3 
   // TODO: Reset obstacle when it goes off screen
+  if (obstacleY >= height){
+    obstacleY = 0
+    obstacleX = random(0,400)
+  }
   // HINT: Check if obstacleX > width
   // Reset to left side and new random Y position
 }
@@ -100,6 +103,7 @@ function moveObstacle() {
 function checkCoinCollection() {
   // TODO: Check if player touches coin
   // HINT: Use dist(playerX, playerY, coinX, coinY)
+    if dist(playerX,pl)
   // If distance < 15:
   //   - Increase score
   //   - Create new coin
