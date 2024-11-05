@@ -121,12 +121,15 @@ function checkCollisions() {
   // TODO: Check if player hits obstacle 
   if (dist(playerX,playerY,obstacleX,obstacleY) < 10){
     hits++
-    if (hits >= 3){
+    if (hits > 3){
       gameOver = true
+      textAlign
     }
     else gameOver = false
     playerX = random(25,375)
     playerY = random(25,375)
+    obstacleX = random(25, 375)
+    obstacleY = random(25, 375)
   }
   // HINT: Similar to coin collection
   // If hit (distance < 20):
@@ -140,6 +143,7 @@ function displayStats() {
   textSize(16);
   text("Score: " + score, 10, 20);
   // TODO: Add display for hits and speed
+  text({hits}, 150, 25)
 }
 
 function displayGameOver() {
@@ -159,6 +163,9 @@ function newCoin() {
 
 function resetGame() {
   // TODO: Reset all game variables
+  hits = 0
+  score = 0
+  initializeGame()
   // HINT: Reset score, hits, speed
   // Set gameOver to false
   // Call initializeGame()
@@ -166,6 +173,9 @@ function resetGame() {
 
 function keyPressed() {
   // TODO: Check for 'R' key to restart game
+  if (keyPressed = R){
+    initializeGame()
+  }
   // HINT: Use key === 'r' || key === 'R'
   // Only works when game is over
 }
